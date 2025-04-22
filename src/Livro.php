@@ -1,50 +1,23 @@
-=<?php
-class Livro
-{
-    //Atributos/propriedades- (características do Livro)
-    private string $titulo;
-    private string $autor;
-    private int $paginas;
- 
-    //Método construtor
-    public function __construct(string $titulo, string $autor, int $paginas)
-    {
-        $this->setTitulo($titulo);
-        $this->setAutor($autor);
-        $this->setpaginas($paginas);
-    }
- 
-    //Métodos setters
-    private function setTitulo(string $titulo): void
-    {
+<?php
+require_once 'Formato.php';
+
+class Livro {
+    protected string $titulo;
+    protected string $autor;
+    protected float $preco;
+    protected Formato $formato;
+
+    public function __construct(string $titulo, string $autor, float $preco, Formato $formato) {
         $this->titulo = $titulo;
-    }
- 
-    private function setAutor(string $autor): void
-    {
         $this->autor = $autor;
+        $this->preco = $preco;
+        $this->formato = $formato;
     }
-   
-    private function setPaginas(string $paginas): void
-    {
-        $this->paginas = $paginas;
-    }
- 
-    //Métodos getters
-    public function getTitulo():string
-    {
-        return $this->titulo;
-    }
-   
-    public function getAutor():string
-    {
-        return $this->autor;
-    }
- 
-    public function getPaginas():int
-    {
-        return $this->paginas;
+
+    public function exibirDados(): string {
+        return "<strong>Título:</strong> {$this->titulo}<br>" .
+               "<strong>Autor:</strong> {$this->autor}<br>" .
+               "<strong>Preço:</strong> R$ {$this->preco}<br>" .
+               "<strong>Formato:</strong> {$this->formato->value}<br>";
     }
 }
-?>
- 
