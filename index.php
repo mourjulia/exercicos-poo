@@ -2,8 +2,8 @@
 require_once 'Literario.php';
 require_once 'Programacao.php';
 
-$livro1 = new Literario("Dom Casmurro", "Machado de Assis", 39.90, Formato::IMPRESSO, Genero::ROMANCE);
-$livro2 = new Programacao("PHP Moderno", "João Silva", 89.90, Formato::DIGITAL, "Informática", "PHP");
+$livro1 = new Literario("1984", "George Orwell", 39.90, Formato::FISICO);
+$livro2 = new Programacao("Código Limpo", "Robert C. Martin", 49.90, Formato::DIGITAL);
 
 echo "<h2>Livro Literário</h2>";
 echo $livro1->exibirDados();
